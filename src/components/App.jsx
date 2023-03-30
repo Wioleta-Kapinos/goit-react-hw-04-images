@@ -51,16 +51,16 @@ export const App = () => {
     searchImages(query);
   }
 
-    return (
-      <div className="App">
-        <Searchbar onSubmit={searchImages} />
-        {error && <p>Something went wrong, please try later.</p>}
-        {isLoading && <Loader />}
-        <ImageGallery images={images} openModal={openModal}/> 
-        {images.length > 0 && <Button handleButtonClick={handleButtonClick} />}
-        {modal && 
-        <Modal image={largeImageURL} closeModal={closeModal}  />
-        } 
-      </div>
-    );
+  return (
+    <div className="App">
+      <Searchbar onSubmit={searchImages} />
+      {error && <p className="error">Something went wrong, please try later.</p>}
+      {isLoading && <Loader />}
+      <ImageGallery images={images} openModal={openModal}/> 
+      {images.length > 0 && <Button handleButtonClick={handleButtonClick} />}
+      {modal && 
+      <Modal image={largeImageURL} closeModal={closeModal}  />
+      } 
+    </div>
+  );
 }
